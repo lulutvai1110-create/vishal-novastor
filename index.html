@@ -33,6 +33,29 @@ section{padding:42px 0 60px}.section-head{display:flex;justify-content:space-bet
 footer{padding:27px 0;color:#817b6f;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:760px){nav{gap:13px;font-size:12px}.hero{grid-template-columns:1fr;padding:55px 0 35px}.hero-card{min-height:220px}.grid{grid-template-columns:1fr 1fr}.about-inner{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
 @media(max-width:480px){.nav{height:66px}.brand{font-size:13px}nav{gap:10px}nav a:nth-child(3){display:none}.grid{grid-template-columns:1fr}.product{min-height:195px}h1{font-size:51px}}
+
+/* VISHAL BROWSER product listing */
+.browser-product{grid-column:span 2;min-height:0;display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:center}
+.browser-product .browser-art{width:100%;aspect-ratio:1/1;border-radius:17px;overflow:hidden;background:#f4f3f0;border:1px solid var(--line);display:grid;place-items:center}
+.browser-product .browser-art img{width:100%;height:100%;object-fit:contain}
+.browser-product .browser-copy h3{margin:12px 0 7px}
+.browser-product .browser-copy p{margin-bottom:14px}
+.browser-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.browser-actions .btn{padding:10px 14px;font-size:12px}
+.available{color:#267348!important}
+.browser-details{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;margin-top:22px}
+.browser-detail-grid{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:center}
+.browser-detail-logo{width:100%;border-radius:16px;border:1px solid var(--line);background:#f6f5f2}
+.browser-detail-logo img{display:block;width:100%;height:auto}
+.browser-details h3{font:30px Georgia,serif;margin:0 0 10px}
+.browser-details p{color:var(--muted);line-height:1.7}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:17px 0}
+.feature{background:#faf8f2;border:1px solid var(--line);border-radius:11px;padding:12px;font-size:13px;color:#5e594f}
+.feature b{display:block;color:var(--ink);margin-bottom:4px}
+.download-note{font-size:11px!important;color:#8a8375!important;margin-top:10px}
+@media(max-width:760px){.browser-product{grid-column:span 2;grid-template-columns:120px 1fr;gap:15px}.browser-detail-grid{grid-template-columns:1fr}.browser-detail-logo{max-width:260px;margin:auto}.browser-details h3{text-align:center}}
+@media(max-width:480px){.browser-product{grid-column:span 1;grid-template-columns:1fr}.browser-product .browser-art{max-width:150px}.feature-list{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -53,7 +76,18 @@ footer{padding:27px 0;color:#817b6f;font-size:12px}.footer-inner{display:flex;ju
   <div class="section-head"><div><div class="eyebrow">The collection</div><h2>Explore our projects</h2></div><p>Apps · Games · Tools</p></div>
   <div class="toolbar"><input class="search" id="search" type="search" placeholder="Search apps, games and tools…" aria-label="Search projects"><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="app">Apps</button><button class="filter" data-filter="game">Games</button><button class="filter" data-filter="tool">Tools</button></div></div>
   <div class="grid" id="grid">
-    <article class="product" data-type="app" data-name="vishal browser"><div class="product-top"><div class="app-icon">◉</div><span class="tag">App</span></div><h3>VISHAL BROWSER</h3><p>A custom mobile browsing experience with a clean, dark interface.</p><div class="product-foot"><span>Project showcase</span><span class="status">Coming soon</span></div></article>
+    <article class="product browser-product" data-type="app" data-name="vishal browser">
+      <div class="browser-art"><img src="vishal-browser-logo.png" alt="VISHAL BROWSER logo"></div>
+      <div class="browser-copy">
+        <div class="product-top"><span class="tag">Android App</span><span class="status available">Available now</span></div>
+        <h3>VISHAL BROWSER</h3>
+        <p>A custom mobile browsing experience with a clean, dark interface, Google search and handy browser tools.</p>
+        <div class="browser-actions">
+          <a class="btn primary" href="VISHAL-BROWSER.apk" download>Download APK ↓</a>
+          <a class="btn secondary" href="#browser-details">View details</a>
+        </div>
+      </div>
+    </article>
     <article class="product" data-type="app" data-name="vishal photo studio"><div class="product-top"><div class="app-icon">✦</div><span class="tag">App</span></div><h3>VISHAL PHOTO STUDIO</h3><p>A mobile photo-editing project with creative tools and adjustments.</p><div class="product-foot"><span>Project showcase</span><span class="status">Coming soon</span></div></article>
     <article class="product" data-type="app" data-name="vishalvideo"><div class="product-top"><div class="app-icon">▶</div><span class="tag">App</span></div><h3>VISHALVIDEO</h3><p>A video app concept focused on user-uploaded videos.</p><div class="product-foot"><span>Project showcase</span><span class="status">Coming soon</span></div></article>
     <article class="product" data-type="game" data-name="vishal run"><div class="product-top"><div class="app-icon">♟</div><span class="tag">Game</span></div><h3>VISHAL RUN</h3><p>An arcade-style game project from the VISHAL collection.</p><div class="product-foot"><span>Project showcase</span><span class="status">Coming soon</span></div></article>
@@ -61,6 +95,29 @@ footer{padding:27px 0;color:#817b6f;font-size:12px}.footer-inner{display:flex;ju
     <article class="product" data-type="game" data-name="clue room fatehpur"><div class="product-top"><div class="app-icon">◇</div><span class="tag">Game</span></div><h3>CLUE ROOM: FATEHPUR</h3><p>A cinematic mystery game currently in development.</p><div class="product-foot"><span>In development</span><span class="status">Coming soon</span></div></article>
   </div><div class="empty" id="empty">No matching projects found.</div>
 </div></section>
+
+<section id="browser-details"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Now available</div><h2>Meet VISHAL BROWSER</h2></div><p>Android · APK download</p></div>
+  <div class="browser-details">
+    <div class="browser-detail-grid">
+      <div class="browser-detail-logo"><img src="vishal-browser-logo.png" alt="VISHAL BROWSER app branding"></div>
+      <div>
+        <div class="eyebrow"><span class="dot"></span> A VISHAL creation</div>
+        <h3>Browse your way.</h3>
+        <p>VISHAL BROWSER is a mobile browser project designed for a simple, comfortable browsing experience. It brings search and everyday browser tools together in one place.</p>
+        <div class="feature-list">
+          <div class="feature"><b>Quick search</b>Google search as the default search option</div>
+          <div class="feature"><b>Dark interface</b>A clean dark-purple inspired browsing look</div>
+          <div class="feature"><b>Bookmarks & history</b>Keep useful pages and revisit them</div>
+          <div class="feature"><b>Browser controls</b>Navigate with back, forward and reload</div>
+        </div>
+        <a class="btn primary" href="VISHAL-BROWSER.apk" download>Download VISHAL BROWSER APK ↓</a>
+        <p class="download-note">Android APK file · 6.1 MB · Install only if you trust this app. Your phone may ask you to allow installation from your browser or file manager.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
 <section class="about" id="about"><div class="wrap about-inner"><div><div class="eyebrow">Our story</div><h2>Ideas into experiences.</h2><p>VISHAL NOVASTORE is an independent project hub for experiments, apps, games and digital creations. Each project is built step by step, with a focus on learning, usefulness and a better experience.</p></div><div class="values"><div class="value"><b>Creative</b><span>Fresh ideas and experiments</span></div><div class="value"><b>Practical</b><span>Useful digital experiences</span></div><div class="value"><b>Growing</b><span>New projects over time</span></div><div class="value"><b>Independent</b><span>Made with curiosity</span></div></div></div></section>
 </main>
 <footer id="contact"><div class="wrap footer-inner"><span>© <span id="year"></span> VISHAL NOVASTORE</span><span>Made with creativity · Free access</span></div></footer>
