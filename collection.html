@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fbfaf6"><meta name="description" content="VISHAL NOVASTORE — apps, games and digital tools created by Vishal.">
+<title>Collection | VISHAL NOVASTORE</title><link rel="stylesheet" href="styles.css"></head><body>
+
+<header><div class="wrap nav">
+<a class="brand" href="index.html">VISHAL<small>NOVASTORE</small></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation">Menu ☰</button>
+<nav>
+<a href="index.html" >Home</a>
+<a href="collection.html" aria-current="page">Collection</a>
+<a href="about.html" >About</a>
+<a href="contact.html" >Contact</a>
+</nav></div></header><main>
+<div class="wrap page-hero"><div class="eyebrow">The collection</div><h1>Explore our <span>projects.</span></h1><p class="lead">Apps, games and useful tools — all in one place.</p></div>
+<section><div class="wrap"><div class="toolbar"><input class="search" id="search" type="search" placeholder="Search apps, games and tools…" aria-label="Search projects"><div class="filters">
+<button class="filter active" data-filter="all">All</button><button class="filter" data-filter="app">Apps</button><button class="filter" data-filter="game">Games</button><button class="filter" data-filter="tool">Tools</button></div></div>
+<div class="grid" id="grid">
+<article class="product showcase" data-type="app" data-name="vishal browser"><div class="art"><img src="vishal-browser-logo.png" alt="VISHAL BROWSER logo"></div><div class="copy"><div class="product-top"><span class="tag">Android App</span><span class="status available">Available now</span></div><h3>VISHAL BROWSER</h3><p>A custom mobile browsing experience with a clean, dark interface, Google search and handy browser tools.</p><div class="buttons"><a class="btn primary" href="VISHAL-BROWSER.apk" download>Download APK ↓</a></div></div></article>
+<article class="product showcase" data-type="app" data-name="vishal photo studio"><div class="art"><img src="vishal-photo-studio-logo.png" alt="VISHAL PHOTO STUDIO logo"></div><div class="copy"><div class="product-top"><span class="tag">Android App</span><span class="status available">Available now</span></div><h3>VISHAL PHOTO STUDIO</h3><p>A mobile photo editor with filters, adjustments, crop, text and creative tools.</p><div class="buttons"><a class="btn primary" href="VISHAL%20PHOTO%20STUDIO_1.apk" download>Download APK ↓</a><a class="btn secondary" href="VISHAL-PHOTO-STUDIO.html">Open Web App</a></div></div></article>
+<article class="product" data-type="app" data-name="vishalvideo"><div class="product-top"><div class="app-icon">▶</div><span class="tag">App</span></div><h3>VISHALVIDEO</h3><p>A video app concept focused on user-uploaded videos.</p><span class="status">Coming soon</span></article>
+<article class="product" data-type="game" data-name="vishal run"><div class="product-top"><div class="app-icon">♟</div><span class="tag">Game</span></div><h3>VISHAL RUN</h3><p>An arcade-style game project from the VISHAL collection.</p><span class="status">Coming soon</span></article>
+<article class="product" data-type="tool" data-name="quick tool"><div class="product-top"><div class="app-icon">⌘</div><span class="tag">Tool</span></div><h3>QUICK TOOL</h3><p>A collection of handy web utilities in one simple place.</p><span class="status">Coming soon</span></article>
+<article class="product" data-type="game" data-name="clue room fatehpur"><div class="product-top"><div class="app-icon">◇</div><span class="tag">Game</span></div><h3>CLUE ROOM: FATEHPUR</h3><p>A cinematic mystery game currently in development.</p><span class="status">Coming soon</span></article>
+</div><div id="empty" style="display:none;text-align:center;padding:24px;color:#777267">No matching projects found.</div></div></section>
+</main><footer><div class="wrap footer-inner"><span>© <span id="year"></span> VISHAL NOVASTORE</span><span>Made with creativity · Free access</span></div></footer><script>
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('nav');
+if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Close ✕':'Menu ☰';});}
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');if(toggle)toggle.textContent='Menu ☰';}));
+const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
+const search=document.getElementById('search'),cards=[...document.querySelectorAll('.product')],filters=[...document.querySelectorAll('.filter')],empty=document.getElementById('empty');let active='all';
+function update(){if(!search)return;let q=search.value.toLowerCase().trim(),shown=0;cards.forEach(c=>{let ok=(active==='all'||c.dataset.type===active)&&c.dataset.name.includes(q);c.style.display=ok?'flex':'none';if(ok)shown++;});if(empty)empty.style.display=shown?'none':'block';}
+filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;update();}));search?.addEventListener('input',update);
+</script></body></html>

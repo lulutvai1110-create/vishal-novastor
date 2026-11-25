@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fbfaf6"><meta name="description" content="VISHAL NOVASTORE — apps, games and digital tools created by Vishal.">
+<title>Contact | VISHAL NOVASTORE</title><link rel="stylesheet" href="styles.css"></head><body>
+
+<header><div class="wrap nav">
+<a class="brand" href="index.html">VISHAL<small>NOVASTORE</small></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation">Menu ☰</button>
+<nav>
+<a href="index.html" >Home</a>
+<a href="collection.html" >Collection</a>
+<a href="about.html" >About</a>
+<a href="contact.html" aria-current="page">Contact</a>
+</nav></div></header><main>
+<div class="wrap page-hero"><div class="eyebrow">Get in touch</div><h1>Let's <span>connect.</span></h1><p class="lead">Have feedback, a question or an idea about a project? We would be glad to hear from you.</p></div>
+<section><div class="wrap"><div class="contact-card"><h2 style="font:30px Georgia,serif;margin-top:0">Contact VISHAL NOVASTORE</h2>
+<p>This is the official contact page for the VISHAL NOVASTORE project hub.</p>
+<div class="note">A direct email address or working message form has not been provided in the original website file. Add a contact email or form service before publishing this page as a live contact channel.</div>
+<div class="buttons"><a class="btn secondary" href="collection.html">Explore projects</a></div></div></div></section>
+</main><footer><div class="wrap footer-inner"><span>© <span id="year"></span> VISHAL NOVASTORE</span><span>Made with creativity · Free access</span></div></footer><script>
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('nav');
+if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Close ✕':'Menu ☰';});}
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');if(toggle)toggle.textContent='Menu ☰';}));
+const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
+const search=document.getElementById('search'),cards=[...document.querySelectorAll('.product')],filters=[...document.querySelectorAll('.filter')],empty=document.getElementById('empty');let active='all';
+function update(){if(!search)return;let q=search.value.toLowerCase().trim(),shown=0;cards.forEach(c=>{let ok=(active==='all'||c.dataset.type===active)&&c.dataset.name.includes(q);c.style.display=ok?'flex':'none';if(ok)shown++;});if(empty)empty.style.display=shown?'none':'block';}
+filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;update();}));search?.addEventListener('input',update);
+</script></body></html>
