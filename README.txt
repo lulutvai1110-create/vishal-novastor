@@ -18,3 +18,8 @@ The supplied source was only the main HTML file. Copy the existing image files a
 
 The contact page intentionally does not invent an email address or pretend a message form works. Add a real contact address/form service before publishing.
 Upload all files to the existing GitHub Pages repository root. Keep a backup of the old site first.
+
+FAVICON ADDED:
+- favicon.ico
+- vishal-novastore-favicon.png
+All four HTML pages now reference the favicon files.
